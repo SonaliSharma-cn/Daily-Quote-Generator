@@ -1,0 +1,185 @@
+/* Fonts & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Sky with animated clouds */
+.sky {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to top, #a0c8ff 0%, #e0f7ff 100%);
+}
+
+/* Cartoon clouds shape with animation */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow:
+    30px 0 0 0 #fff,
+    60px 10px 0 0 #fff,
+    90px 0 0 0 #fff,
+    60px -10px 0 0 #fff;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 70px;
+  top: 15%;
+  left: -150px;
+  animation-name: cloudMove1;
+  animation-duration: 35s;
+}
+
+.cloud2 {
+  width: 150px;
+  height: 90px;
+  top: 40%;
+  left: -200px;
+  animation-name: cloudMove2;
+  animation-duration: 45s;
+  animation-delay: 10s;
+}
+
+.cloud3 {
+  width: 100px;
+  height: 60px;
+  top: 65%;
+  left: -120px;
+  animation-name: cloudMove3;
+  animation-duration: 40s;
+  animation-delay: 5s;
+}
+
+/* Cloud animations - moving horizontally */
+@keyframes cloudMove1 {
+  0% { left: -150px; }
+  100% { left: 110vw; }
+}
+
+@keyframes cloudMove2 {
+  0% { left: -200px; }
+  100% { left: 110vw; }
+}
+
+@keyframes cloudMove3 {
+  0% { left: -120px; }
+  100% { left: 110vw; }
+}
+
+/* Main container */
+.container {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px 30px;
+  max-width: 450px;
+  margin: 100px auto 60px auto;
+  border-radius: 25px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Title styling */
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  color: #3a3a3a;
+  margin-bottom: 25px;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 5px rgba(255, 182, 193, 0.6);
+}
+
+/* Quote area */
+.quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  min-height: 100px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  padding: 0 15px;
+  user-select: none;
+}
+
+/* Fade in effect for quotes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button style */
+.btn {
+  background: #ff758c;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 15px 35px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 117, 140, 0.6);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  box-shadow: 0 8px 20px rgba(255, 126, 179, 0.8);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  user-select: none;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 50px 15px 40px 15px;
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .quote {
+    font-size: 1.2rem;
+    min-height: 80px;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
